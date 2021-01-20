@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Category;
 
+use App\Models\Category\Category;
+
 class CategoryController
 {
     public function getAll()
     {
-        return "1";
+        $data=Category::get();
+        return $data;
     }
 }
