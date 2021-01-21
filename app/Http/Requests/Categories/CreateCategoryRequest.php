@@ -14,7 +14,7 @@ class CreateCategoryRequest extends ApiRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|min:3',
             'thumbnail' => 'required',
         ];
     }

@@ -22,6 +22,9 @@ class CategoryController extends Controller
 
     public function create(CreateCategoryRequest $request)
     {
-        return $request->validated();
+        $category = new Category;
+        $category->fill($request->validated());
+        $category->save();
+        return $category;
     }
 }
