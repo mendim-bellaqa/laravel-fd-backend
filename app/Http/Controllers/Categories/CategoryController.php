@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Categories\Category;
+namespace App\Http\Controllers\Categories;
 
 use App\Abstracts\Controller;
 use App\Models\Categories\Category;
@@ -12,5 +12,10 @@ class CategoryController extends Controller
         $data = Category::get();
 
         return $data;
+    }
+
+    public function delete($id)
+    {
+        return Category::find($id)->delete();
     }
 }
