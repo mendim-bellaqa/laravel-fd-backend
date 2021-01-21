@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Categories;
 
-use Illuminate\Http\Request;
 use App\Abstracts\Controller;
+use App\Http\Requests\Categories\CreateCategoryRequest;
 use App\Models\Categories\Category;
 
 class CategoryController extends Controller
@@ -20,15 +20,8 @@ class CategoryController extends Controller
         return Category::find($id)->delete();
     }
 
-    public function create(Request $request)
+    public function create(CreateCategoryRequest $request)
     {
-        $request->validate([
-
-            "name"=> "required",
-
-        ]);
-
-        return $request->all();
-
+        return $request->validated();
     }
 }
