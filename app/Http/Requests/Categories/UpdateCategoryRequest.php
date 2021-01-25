@@ -14,9 +14,8 @@ class UpdateCategoryRequest extends ApiRequest
     public function rules()
     {
         return [
-            'id' => 'required',
-            'name' => 'required|min:3',
-            'thumbnail' => 'required'
+            'name' => 'filled|min:3',
+            'thumbnail' => 'filled'
         ];
     }
 }

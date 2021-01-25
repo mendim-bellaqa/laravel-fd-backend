@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Categories;
 
 use App\Abstracts\Controller;
 use App\Http\Requests\Categories\CreateCategoryRequest;
+use App\Http\Requests\Categories\UpdateCategoryRequest;
 use App\Models\Categories\Category;
 
 class CategoryController extends Controller
@@ -17,7 +18,13 @@ class CategoryController extends Controller
 
     public function delete($id)
     {
-        return Category::find($id)->delete();
+        $category = Category::find($id);
+
+        if ($category) {
+            $category->delete();
+        }
+
+        return null;
     }
 
     public function create(CreateCategoryRequest $request)
@@ -25,13 +32,16 @@ class CategoryController extends Controller
         $category = new Category;
         $category->fill($request->validated());
         $category->save();
+
         return $category;
     }
-    public function update(CreateCategoryRequest $request, $id)
+
+    public function update($id, UpdateCategoryRequest $request)
     {
         $category = category::find($id);
         $category->fill($request->validated());
         $category->save();
+
         return $category;
     }
 }
