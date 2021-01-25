@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function getAll()
     {
-        $data = Category::get();
+        $data = Category::paginate();
 
         return $data;
     }
