@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Products;
 
 use App\Abstracts\Controller;
-use App\Http\Requests\Products\CreateProductRequest;
-use App\Http\Requests\Products\UpdateProductRequest;
 use App\Models\Products\Product;
+use App\Http\Requests\Product\CreateProductRequest;
+use App\Http\Requests\Products\UpdateProductRequest;
 
 class ProductController extends Controller
 {
@@ -18,7 +18,7 @@ class ProductController extends Controller
 
     public function delete($id)
     {
-        $Product = Product::find($id);
+        $product = Product::find($id);
 
         if ($product) {
             $product->delete();
