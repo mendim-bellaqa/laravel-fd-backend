@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cities\CityController;
+use App\Http\Controllers\Products\ProductsController;
 use App\Http\Controllers\Categories\CategoryController;
 
 
@@ -18,4 +19,11 @@ Route::get('/city', [CityController::class, 'getAll']);
 Route::delete('/city/{id}', [CityController::class, 'delete']);
 Route::post('/city', [CityController::class, 'create']);
 Route::put('/city/{id}', [CityController::class, 'update']);
+// ..
+
+// Products
+Route::get('/products', [ProductsController::class, 'getAll']);
+Route::delete('/products/{id}', [ProductsController::class, 'delete']);
+Route::post('/products', [ProductsController::class, 'create']);
+Route::put('/products/{id}', [ProductsController::class, 'update']);
 // ..
