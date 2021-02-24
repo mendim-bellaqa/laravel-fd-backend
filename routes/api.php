@@ -20,6 +20,7 @@ Route::get('/city', [CityController::class, 'getAll']);
 Route::delete('/city/{id}', [CityController::class, 'delete']);
 Route::post('/city', [CityController::class, 'create']);
 Route::put('/city/{id}', [CityController::class, 'update']);
+Route::get('/city/{id}', [CityController::class, 'show']);
 // ..
 
 // Products
@@ -27,4 +28,5 @@ Route::get('/products', [ProductsController::class, 'getAll']);
 Route::delete('/products/{id}', [ProductsController::class, 'delete']);
 Route::post('/products', [ProductsController::class, 'create']);
 Route::put('/products/{id}', [ProductsController::class, 'update']);
+Route::get('/products/{id}', [ProductsController::class, 'show']);
 // ..
