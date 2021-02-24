@@ -11,6 +11,7 @@ Route::get('/categories', [CategoryController::class, 'getAll']);
 Route::delete('/categories/{id}', [CategoryController::class, 'delete']);
 Route::post('/categories', [CategoryController::class, 'create']);
 Route::put('/categories/{id}', [CategoryController::class, 'update']);
+Route::get('/categories/{id}', [CategoryController::class, 'show']);
 
 // ..
 
