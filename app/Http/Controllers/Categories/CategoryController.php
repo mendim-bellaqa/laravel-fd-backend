@@ -44,13 +44,9 @@ class CategoryController extends Controller
 
         return $category;
     }
-
-
     public function show($id)
     {
         $category = category::find($id);
-        // $category->fill($request->validated());
-        // $category->save();
 
         return $category;
     }

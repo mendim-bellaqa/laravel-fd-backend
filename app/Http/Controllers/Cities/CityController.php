@@ -44,11 +44,4 @@ class CityController extends Controller
 
         return $city;
     }
-
-    public function show($id)
-    {
-        $city = city::find($id);
-
-        return $category;
-    }
 }
