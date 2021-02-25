@@ -15,8 +15,8 @@ class UpdateProductRequest extends ApiRequest
     {
         return [
             'name' => 'required|min:3',
-            'description' => 'required',
             'category_id' => 'required',
+            'description' => 'required',
             'price' => 'required'
         ];
     }

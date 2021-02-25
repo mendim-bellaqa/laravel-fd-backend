@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Categories;
 
 use App\Abstracts\Controller;
+use App\Models\Categories\Category;
+use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Requests\Categories\CreateCategoryRequest;
 use App\Http\Requests\Categories\UpdateCategoryRequest;
-use App\Models\Categories\Category;
 
 class CategoryController extends Controller
 {

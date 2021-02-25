@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Product;
 
 use App\Abstracts\ApiRequest;
+use App\Http\Requests\Product\CreateProductRequest;
 
 class CreateProductRequest extends ApiRequest
 {
@@ -15,8 +16,8 @@ class CreateProductRequest extends ApiRequest
     {
         return [
             'name' => 'required|min:3',
-            'description' => 'required',
             'category_id' => 'required',
+            'description' => 'required',
             'price' => 'required'
         ];
     }
