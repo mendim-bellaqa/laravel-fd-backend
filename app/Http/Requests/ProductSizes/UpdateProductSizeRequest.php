@@ -15,10 +15,8 @@ class UpdateProductSizeRequest extends ApiRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3',
-            'category_id' => 'required',
-            'description' => 'required',
-            'price' => 'required'
+            'title' => 'required|min:3',
+            'product_id' => 'required',
         ];
     }
 }

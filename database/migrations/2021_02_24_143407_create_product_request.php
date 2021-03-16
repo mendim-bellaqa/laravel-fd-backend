@@ -14,8 +14,14 @@ class CreateProductRequest extends Migration
     public function up()
     {
         Schema::create('product_request', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('title');
             $table->timestamps();
+            $table->unsignedBigInteger('category_id')->nullable();
+
+
+
+            $table->foreign('category_id')->references('category_id')->on('categories')->onDelete('cascade');
         });
     }
 

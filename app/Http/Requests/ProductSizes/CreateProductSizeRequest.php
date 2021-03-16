@@ -3,7 +3,7 @@
 namespace App\Http\Requests\ProductSizes;
 
 use App\Abstracts\ApiRequest;
-use App\Http\Requests\Product\CreateProductSizeRequest;
+use App\Http\Requests\ProductSizes\CreateProductSizeRequest;
 
 class CreateProductSizeRequest extends ApiRequest
 {
@@ -15,10 +15,8 @@ class CreateProductSizeRequest extends ApiRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:3',
-            'category_id' => 'required',
-            'description' => 'required',
-            'price' => 'required'
+            'title' => 'required|min:3',
+            'product_id' => 'required',
         ];
     }
 }

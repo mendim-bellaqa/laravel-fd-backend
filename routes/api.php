@@ -34,7 +34,7 @@ Route::get('/products/{id}', [ProductController::class, 'show']);
 // ..
 
 
-// Products
+// Products SIZES
 Route::get('/products-size', [ProductSizeController::class, 'getAll']);
 Route::delete('/products-size/{id}', [ProductSizeController::class, 'delete']);
 Route::post('/products-size', [ProductSizeController::class, 'create']);

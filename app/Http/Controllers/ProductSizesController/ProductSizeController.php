@@ -35,7 +35,7 @@ class ProductSizeController extends Controller
 
     public function create(CreateProductSizeRequest $request)
     {
-        $product_size_size = new ProductSizes;
+        $product_size = new ProductSizes;
         $product_size->fill($request->validated());
         $product_size->save();
 
