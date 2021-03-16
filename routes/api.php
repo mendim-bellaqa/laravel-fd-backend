@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cities\CityController;
-use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Categories\CategoryController;
+use App\Http\Controllers\ProductSizesController\ProductSizeController;
+
 
 
 // Categories
@@ -29,4 +31,13 @@ Route::delete('/products/{id}', [ProductController::class, 'delete']);
 Route::post('/products', [ProductController::class, 'create']);
 Route::put('/products/{id}', [ProductController::class, 'update']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
+// ..
+
+
+// Products
+Route::get('/products-size', [ProductSizeController::class, 'getAll']);
+Route::delete('/products-size/{id}', [ProductSizeController::class, 'delete']);
+Route::post('/products-size', [ProductSizeController::class, 'create']);
+Route::put('/products-size/{id}', [ProductSizeController::class, 'update']);
+Route::get('/products-size/{id}', [ProductSizeController::class, 'show']);
 // ..
