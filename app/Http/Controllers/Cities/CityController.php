@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Cities;
 
 use App\Models\Cities\City;
 use App\Abstracts\Controller;
-use App\Http\Controllers\Cities\CityController;
 use App\Http\Requests\Cities\CreateCityRequest;
 use App\Http\Requests\Cities\UpdateCityRequest;
 
@@ -40,7 +39,7 @@ class CityController extends Controller
 
     public function update($id, UpdateCityRequest $request)
     {
-        $city = city::find($id);
+        $city = City::find($id);
         $city->fill($request->validated());
         $city->save();
 
@@ -49,7 +48,7 @@ class CityController extends Controller
 
     public function show($id)
     {
-        $city = city::find($id);
+        $city = City::find($id);
 
         return $city;
     }
