@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Categories;
 
 use App\Abstracts\Controller;
-use App\Models\Categories\Category;
 use App\Http\Controllers\Categories\CategoryController;
 use App\Http\Requests\Categories\CreateCategoryRequest;
 use App\Http\Requests\Categories\UpdateCategoryRequest;
+use App\Models\Categories\Category;
 
 class CategoryController extends Controller
 {
@@ -21,11 +21,13 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
 
-        if ($category) {
-            $category->delete();
+        if (!$category) {
+            return response()->json(['error' => 'Category not found'], 404);
         }
 
-        return null;
+        $category->delete();
+
+        return response()->json(['message' => 'Category deleted successfully'], 200);
     }
 
     public function create(CreateCategoryRequest $request)

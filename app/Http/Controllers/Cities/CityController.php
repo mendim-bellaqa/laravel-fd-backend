@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Cities;
 
-
-use App\Models\Cities\City;
 use App\Abstracts\Controller;
 use App\Http\Requests\Cities\CreateCityRequest;
 use App\Http\Requests\Cities\UpdateCityRequest;
+use App\Models\Cities\City;
 
 class CityController extends Controller
 {
